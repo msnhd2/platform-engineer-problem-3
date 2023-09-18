@@ -1,0 +1,5 @@
+com/thoughtworks/problem3application/problem3ApplicationTests.class
+com/thoughtworks/problem3application/functional/UserFunctionalTest.class
+com/thoughtworks/problem3application/helpers/UserBuilder.class
+com/thoughtworks/problem3application/unit/domain/services/UserDomainServiceImplTest.class
+com/thoughtworks/problem3application/unit/domain/entities/UserTest.class

@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+problem3,com.thoughtworks.problem3application.domain.entities,User,0,68,0,0,0,9,0,13,0,13
+problem3,com.thoughtworks.problem3application,Problem3Application,14,3,0,0,3,1,2,1,2,1
+problem3,com.thoughtworks.problem3application.api.controllers,AuthController,0,9,0,0,0,2,0,2,0,2
+problem3,com.thoughtworks.problem3application.api.controllers,RegisterController,0,11,0,0,0,2,0,2,0,2
+problem3,com.thoughtworks.problem3application.api.controllers,UserController,0,26,0,0,0,5,0,5,0,5
+problem3,com.thoughtworks.problem3application.application.services,UserApplicationServiceImpl,0,106,0,0,0,18,0,7,0,7
+problem3,com.thoughtworks.problem3application.application.services,UserApplicationServiceImpl.new TypeToken() {...},0,6,0,0,0,1,0,1,0,1
+problem3,com.thoughtworks.problem3application.domain.services,UserDomainServiceImpl,0,80,0,4,0,18,0,9,0,7
