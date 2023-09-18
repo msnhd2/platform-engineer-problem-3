@@ -1,0 +1,25 @@
+#Mon Sep 18 19:39:45 BRT 2023
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/Problem3Application.java=1695075791382
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/api/controllers/AuthController.java=1695075791383
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/api/controllers/RegisterController.java=1695075791383
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/api/controllers/UserController.java=1695075791383
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/dtos/request/AuthenticateRequestDTO.java=1695075791383
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/dtos/request/UserRequestCreateDTO.java=1695075791384
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/dtos/request/UserRequestUpdateDTO.java=1695075791384
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/dtos/response/AuthenticateResponseDTO.java=1695075791384
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/dtos/response/UserResponseDTO.java=1695075791384
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/interfaces/UserApplicationService.java=1695075791384
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/application/services/UserApplicationServiceImpl.java=1695075791385
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/configurations/ApplicationConfig.java=1695075791385
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/configurations/JwtConfig.java=1695075791385
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/configurations/SwaggerConfig.java=1695075791385
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/domain/entities/User.java=1695075791386
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/domain/interfaces/UserDomainService.java=1695075791386
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/domain/services/UserDomainServiceImpl.java=1695075791386
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/infrastructure/components/MD5Component.java=1695075791387
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/infrastructure/repository/repositories/UserRepository.java=1695075791387
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/infrastructure/security/JwtAuthenticationFilter.java=1695075791387
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/java/com/thoughtworks/problem3application/infrastructure/security/TokenCreator.java=1695075791387
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/resources/application-test.properties=1695075791388
+/Users/feitais/enviroment/comunidade/alfeitais/platform-engineer-problem-3/src/main/resources/application.properties=1695075791388
+configuration*?=D3F4BC22E4D53FEF3175FC64564A895C0687044
