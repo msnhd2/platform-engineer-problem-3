@@ -23,15 +23,15 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
 
+      - name: Install Dependencies
+        run: mvn clean install
+  
       - name: Setup AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{secrets.AWS_REGION}}
-
-      - name: Install Dependencies
-        run: mvn clean install
 
       - name: Create ECR
         run: if $(aws ecr describe-images --repository-name java-api) ; then echo ECR Exist; else aws ecr create-repository --repository-name java-api --region us-east-1; fi
