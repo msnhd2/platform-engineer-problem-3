@@ -7,7 +7,7 @@
 Curl example
 ```shell
 curl -X 'POST' \
-  'http://localhost:8080/api/register' \
+  'http://localhost:8080/app/api/register' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -51,21 +51,3 @@ Expected output
 ```json
 [{"id":1,"name":"John Doe","email":"john.doe@example.com"}]%
 ```
-
-pipeline:
- - Instalação de dependencias da aplicação gerando o WAR
- - Criar ecr caso não exista dando permissão para o service lambda
-    - if $(aws ecr describe-images --repository-name my-ecr-repo) ; then echo ECR Exist; else aws ecr create-repository --repository-name my-ecr-repo; fi
- - Efetuar o docker build
- - Efetuar o upload da imagem para o ecr
- - Deploy da imagem na lambda
-
- terraform
-  - Criar lambda container
-  - Data para buscar a URL da imagem
-  - Criar role com permissão de acesso ao ecr
-
-Qualidade:
- - Colocar testes unitários
- - Test e2e
- - Colocar sonarQube como SAST
