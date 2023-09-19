@@ -90,26 +90,42 @@ resource "aws_security_group" "alb" {
   }
 }
 
-resource "aws_ecs_service" "mongo" {
-  name            = "testeapi"
-  cluster         = module.ecs_cluster.id
-  task_definition = module.ecs-fargate-task-definition.task_definition_arn
-  desired_count   = 1
-  iam_role        = "awsvpc"
+# resource "aws_ecs_service" "testeapi" {
+#   name            = "testeapi"
+#   cluster         = module.ecs_cluster.id
+#   task_definition = module.ecs-fargate-task-definition.task_definition_arn
+#   desired_count   = 1
+#   iam_role        = "awsvpc"
 
-  ordered_placement_strategy {
-    type  = "binpack"
-    field = "cpu"
-  }
+#   ordered_placement_strategy {
+#     type  = "binpack"
+#     field = "cpu"
+#   }
 
-  load_balancer {
-    target_group_arn = aws_lb_target_group.foo.arn
-    container_name   = "testeapi"
-    container_port   = 8080
-  }
+#   load_balancer {
+#     target_group_arn = aws_lb_target_group.foo.arn
+#     container_name   = "testeapi"
+#     container_port   = 8080
+#   }
 
-  placement_constraints {
-    type       = "memberOf"
-    expression = "attribute:ecs.availability-zone in [us-east-1a, us-east-1f]"
+#   placement_constraints {
+#     type       = "memberOf"
+#     expression = "attribute:ecs.availability-zone in [us-east-1a, us-east-1f]"
+#   }
+# }
+
+resource "aws_lb_target_group" "alb-javapi" {
+  name        = "testeapi-alb"
+  target_type = "ip"
+  port        = 80
+  protocol    = "HTTP"
+  vpc_id      = "vpc-0f62de7f0cee86007"
+  health_check {
+    path                = "/app/actuator/health"
+    port                = 8080
+    protocol            = "HTTP"
+    healthy_threshold   = 3
+    unhealthy_threshold = 3
+    matcher             = "200"
   }
 }
