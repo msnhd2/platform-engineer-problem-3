@@ -5,7 +5,7 @@ on:
 
   push:
     branches: 
-      - main
+      - '*'
 
 jobs:
   run-cicd:
@@ -35,6 +35,7 @@ jobs:
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
 
       - name: Create ECR
+        continue-on-error: true
         run: if $(aws ecr describe-images --repository-name java-api) ; then echo ECR Exist; else aws ecr create-repository --repository-name java-api --region us-east-1; fi
 
       # - name: Execute Lint
