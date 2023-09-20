@@ -16,10 +16,22 @@ resource "aws_lb" "this" {
   tags                             = { Service = "alb", AlbType = "application" }
 }
 
-resource "aws_lb_target_group_attachment" "this" {
-  target_group_arn = aws_lb_target_group.alb-javapi.arn
-  target_id        = aws_lb.this.arn
-  port             = 8080
+# resource "aws_lb_target_group_attachment" "this" {
+#   target_group_arn = aws_lb_target_group.alb-javapi.arn
+#   target_id        = aws_lb.this.arn
+#   port             = 8080
+# }
+
+resource "aws_lb_listener" "ops_alb_listener_8080" {
+  load_balancer_arn = aws_lb.this.arn
+  port              = "8080"
+  protocol          = "HTTP"
+  #certificate_arn   = "${var.elk_cert_arn}"
+
+  default_action {
+    target_group_arn = aws_lb_target_group.alb-javapi.arn
+    type             = "forward"
+  }
 }
 
 resource "aws_security_group" "alb" {
@@ -65,21 +77,15 @@ resource "aws_ecs_service" "testeapi" {
   cluster         = var.ecs_cluster_id
   task_definition = var.task_definition_arn
   desired_count   = 1
-  iam_role        = "awsvpc"
-
-  ordered_placement_strategy {
-    type  = "binpack"
-    field = "cpu"
+  network_configuration {
+      subnets = ["subnet-057120624e7d96312", "subnet-03de0c66b46a1d139"]
+      assign_public_ip = true
+      security_groups = [aws_security_group.alb.id]
   }
 
   load_balancer {
     target_group_arn = aws_lb_target_group.alb-javapi.arn
     container_name   = "testeapi"
     container_port   = 8080
-  }
-
-  placement_constraints {
-    type       = "memberOf"
-    expression = "attribute:ecs.availability-zone in [us-east-1a, us-east-1f]"
   }
 }
